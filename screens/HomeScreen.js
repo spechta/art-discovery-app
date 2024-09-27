@@ -74,7 +74,8 @@ const HomeScreen = () => {
         console.log("Error fetching artists:", error);
       }
     };
-  
+    // Fetch Instagram data for the artist usernames
+    fetchInstagramData(usernames);
     fetchCards(); // Fetch and filter artist profiles from Firebase
   }, [user.uid]);
 
@@ -92,7 +93,6 @@ const swipeRight = (cardIndex) => {
 
     const artistLiked = artists[cardIndex];
 
-    // Update Firestore
     setDoc(doc(db, "users", user.uid, "likes", artistLiked.id), artistLiked);
 };
 
@@ -165,12 +165,12 @@ const swipeRight = (cardIndex) => {
         return artist ? (
           <View
             key={artist.id}
-            style={tw.style("bg-white h-5/6 rounded-xl relative w-full max-w-xl mx-auto")} // Center and limit width
+            style={tw.style("bg-white h-5/6 rounded-xl relative w-full max-w-xl mx-auto")} 
           >
             {/* Rendering the first image from the images array */}
             {artist.images && artist.images.length > 0 ? (
               <Image
-                style={tw.style("absolute top-0 h-5/6 w-full rounded-t-xl")} // Adjust image size
+                style={tw.style("absolute top-0 h-5/6 w-full rounded-t-xl")}
                 source={{uri: `http://localhost:3001/proxy-image?url=${encodeURIComponent(artist.images[0])}`,}} 
                 resizeMode="contain"
               />
