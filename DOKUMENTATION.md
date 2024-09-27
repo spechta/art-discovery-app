@@ -214,7 +214,14 @@ Bietet die Anmeldelogik für Benutzer, um sich in der Anwendung zu authentifizie
 Ein Modalscreen ermöglicht das Konfigurieren von Profilinformationen.
 
 ## Challenges
-todo
+1. API
+   -Es war schwierig eine API zu finden, die genug Fetch-Requests erlaubt außerdem muss für FetchInstagram.js die Dateistrukture beachtet werden, also an welcher Stelle Bilder gespeichert sind        und ob es sich um Single-Posts oder Caroussel-Posts handelt
+   -Des Weiteren sind die URLs der API nach einer Zeit expired also wird kein Bild angezeigt, weswegen die Posts neu gefetcht werden müssen
+2. Proxy
+   - Instagram erlaubt keinen Cross-Origin-Acess, also Posts stammen von Instagram.com und die Web-App liefert einen Cross-Origin-Error da von einem anderen Ursprung auf die Bilder zugegriffen 
+    wird. Der Proxy-Server wird mit dem Modul concurrently, in package.json definiert, gleichzeitig beim Start der App gestartet und URL-Requests laufen über den Proxy um das ganze zu umgehen
+3. UI & Navigation
+   - Schwierig war es auch mithilfe von StackNavigator.js eine korrekte Navigation über die Knöpfe zu gewährleisten, als entsprechende Explore-Page zu erstellen
 
 ---
 
