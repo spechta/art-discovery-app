@@ -9,7 +9,7 @@ Hier ist die überarbeitete Dokumentation, in der die wichtigsten Funktionalitä
 2. [HomeScreen.js](#homescreenjs)
 3. [LikedArtScreen.js](#likedartscreenjs)
 4. [FetchInstagram.js](#fetchinstagramjs)
-5. [Übrige Dateien](#übrigedateien)
+5. [Übrige Dateien](#übrige-dateien)
 6. [Challenges](#challenges)
 
 
