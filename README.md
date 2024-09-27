@@ -14,3 +14,5 @@ Nutzer der App können dann Künstler liken oder passen um eine personalisierte 
 4. `yarn install` (installiert alle packages aus package.json)
 
 5. `yarn start` (startet die App, w drücken für Web)
+
+6. Sollte direkt nach der Anmeldung "No more artists" angezeigt werden einmal Page refreshen
