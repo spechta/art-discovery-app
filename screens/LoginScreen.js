@@ -55,7 +55,7 @@ const LoginScreen = () => {
       .then(({ user }) => {
         updateProfile(user, { displayName: name }).then(() => {
           setLoading(false);
-          navigation.navigate("Home"); // Navigate to home after successful sign up
+          navigation.navigate("Modal"); // Navigate to modal after successful sign up
         });
       })
       .catch((error) => {
