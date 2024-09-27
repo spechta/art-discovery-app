@@ -1,8 +1,6 @@
-Hier ist die überarbeitete Dokumentation, in der die wichtigsten Funktionalitäten in kleineren Codeblöcken erklärt werden. Die Struktur bleibt die gleiche, aber der Code ist jetzt kompakter und fokussierter.
-
 ---
 
-# Dokumentation des Kunstprojekts
+# Dokumentation der Web-App
 
 ## Inhaltsverzeichnis
 1. [Einleitung](#einleitung)
@@ -17,24 +15,13 @@ Hier ist die überarbeitete Dokumentation, in der die wichtigsten Funktionalitä
 
 ## Einleitung
 
-Dieses Dokument beschreibt die wichtigsten Dateien und deren Funktionen in einem React Native Kunstprojekt. Die Anwendung ermöglicht Benutzern, Kunstwerke von verschiedenen Künstlern zu entdecken und zu liken. Die Kernkomponenten der Anwendung sind `HomeScreen.js`, `LikedArtScreen.js` und `FetchInstagram.js`.
+Dieses Dokument beschreibt die wichtigsten Dateien und deren Funktionen in einem React Native Projekt. Die Anwendung ermöglicht Benutzern, Kunstwerke von verschiedenen Künstlern zu entdecken und zu liken. Die Kernkomponenten der Anwendung sind `HomeScreen.js`, `LikedArtScreen.js` und `FetchInstagram.js`.
 
 ## HomeScreen.js
 
 ### Überblick
 
 `HomeScreen.js` ist der Hauptbildschirm, der eine Swipe-Oberfläche bietet, um Künstler zu entdecken.
-
-### Wichtige Imports
-
-```javascript
-import React, { useEffect, useRef, useState } from "react";
-import { SafeAreaView, View, Image, TouchableOpacity } from "react-native";
-import Swiper from "react-native-deck-swiper";
-import useAuth from "../hooks/useAuth";
-import tw from "tailwind-react-native-classnames";
-import { db } from "../firebase";
-```
 
 ### Benutzeroberfläche
 
@@ -97,16 +84,9 @@ const swipeRight = (cardIndex) => {
 
 ### Wichtige Imports
 
-```javascript
-import React, { useEffect, useState } from "react";
-import { View, Text, ScrollView, Image } from "react-native";
-import tw from "tailwind-react-native-classnames";
-import { db } from "../firebase";
-```
-
 ### Abrufen der gelikten Künstler
 
-Die Funktion `fetchLikedArtists` ruft die gelikten Künstler vom Firestore ab.
+Die Funktion `fetchLikedArtists` ruft die gelikten Künstler aus Firestore ab.
 
 ```javascript
 const fetchLikedArtists = async () => {
@@ -121,7 +101,7 @@ const fetchLikedArtists = async () => {
 
 ### Anordnung der Künstler
 
-Die Künstlerbilder werden zufällig angeordnet, um ein besseres Benutzererlebnis zu bieten.
+Die Künstlerbilder werden zufällig angeordnet, um die Explore-Page interessanter zu gestalten.
 
 ```javascript
 const shuffleArray = (array) => {
@@ -136,7 +116,7 @@ const shuffleArray = (array) => {
 
 ### Layout
 
-Die ScrollView zeigt die gelikten Künstlerbilder an.
+Die ScrollView zeigt alle Posts aller Künstleran, die mit einem Like gespeichert sind.
 
 ```javascript
 <ScrollView>
@@ -152,17 +132,11 @@ Die ScrollView zeigt die gelikten Künstlerbilder an.
 
 `FetchInstagram.js` ist verantwortlich für das Abrufen von Daten von Instagram.
 
-### Wichtige Imports
-
-```javascript
-import axios from 'axios';
-import { setDoc, doc } from 'firebase/firestore';
-import { db } from './firebase';
-```
-
 ### Abrufen der Instagram-Daten
 
 Die Funktion `fetchInstagramData` ruft die Daten für eine Liste von Benutzernamen ab.
+Folgende API wird verwendet, wobei Instagram-Posts von Künstlern über den jeweiligen Instagram Username gefetcht werden. (Die Liste der Namen befindet sich am Anfang von HomeScreen und diese kann auch erweitert werden)
+https://rapidapi.com/social-api1-instagram/api/instagram-scraper-api2/playground/apiendpoint_b1301387-dc09-4b1f-ba39-b7b51d186b40
 
 ```javascript
 export const fetchInstagramData = async (usernames) => {
@@ -203,20 +177,11 @@ Enthält Konfigurationseinstellungen für die Anwendung, einschließlich Name, V
 ### babel.config.js
 Konfigurationsdatei für Babel, die dafür sorgt, dass der JavaScript-Code in eine für Browser verständliche Form transpiliert wird.
 
-### FetchInstagram.js
-Eine Utility-Datei, die Funktionen zum Abrufen von Daten von Instagram bereitstellt, um Kunstwerke anzuzeigen.
-
-### firebase.js
-Konfiguriert Firebase für die Verwendung in der Anwendung, einschließlich Authentifizierung und Datenbankverbindung.
+### firebase.js 
+Konfiguriert Firebase für die Verwendung in der Anwendung, einschließlich Authentifizierung und Datenspeicherung (Dienst von Google).
 
 ### index.js
-Der Einstiegspunkt der Anwendung, der die Haupt-App-Komponente in das DOM rendert.
-
-### input.css
-Beinhaltet die globalen CSS-Stile für die Anwendung.
-
-### LICENSE
-Die Lizenzdatei, die die rechtlichen Bestimmungen für die Nutzung und Verteilung der Anwendung beschreibt.
+Der Einstiegspunkt der Anwendung.
 
 ### metro.config.js
 Konfigurationsdatei für den Metro-Bundler, der für die Verarbeitung von React-Native-Projekten verwendet wird.
@@ -237,22 +202,16 @@ Eine automatische von Yarn generierte Datei, die genaue Versionen der Abhängigk
 Ein benutzerdefinierter Hook, der die Authentifizierungslogik für die Anwendung behandelt.
 
 ### navigation/StackNavigator.js
-Definiert den Stack-Navigator für die Anwendung, der es Benutzern ermöglicht, zwischen verschiedenen Bildschirmen zu navigieren.
+Definiert den Stack-Navigator für die Anwendung, der es Benutzern ermöglicht, zwischen verschiedenen Screens zu navigieren.
 
 ### proxy/server.js
 Beinhaltet die Logik für den Server, der API-Anfragen behandelt und die Kommunikation zwischen dem Frontend und dem Backend ermöglicht.
-
-### screens/HomeScreen.js
-Der Startbildschirm der Anwendung, der eine Übersicht über alle verfügbaren Kunstwerke bietet.
-
-### screens/LikedArtScreen.js
-Ein Bildschirm, der die Kunstwerke anzeigt, die vom Benutzer gemocht wurden.
 
 ### screens/LoginScreen.js
 Bietet die Anmeldelogik für Benutzer, um sich in der Anwendung zu authentifizieren.
 
 ### screens/ModalScreen.js
-Ein Modalscreen für verschiedene Benutzerinteraktionen, wie z.B. das Anzeigen von Details zu einem Kunstwerk.
+Ein Modalscreen ermöglicht das Konfigurieren von Profilinformationen.
 
 ## Challenges
 todo
