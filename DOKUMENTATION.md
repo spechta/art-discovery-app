@@ -9,7 +9,9 @@ Hier ist die überarbeitete Dokumentation, in der die wichtigsten Funktionalitä
 2. [HomeScreen.js](#homescreenjs)
 3. [LikedArtScreen.js](#likedartscreenjs)
 4. [FetchInstagram.js](#fetchinstagramjs)
-5. [Zusammenfassung](#zusammenfassung)
+5. [Übrige Dateien](#übrigedateien)
+6. [Challenges](#challenges)
+
 
 ---
 
@@ -189,10 +191,71 @@ if (docSnap.exists()) {
 }
 ```
 
-## Zusammenfassung
+## Übrige Dateien
 
-Diese Dokumentation gibt einen Überblick über die Schlüsseldateien und deren Funktionen in Ihrem React Native Kunstprojekt. Die `HomeScreen.js`, `LikedArtScreen.js` und `FetchInstagram.js` Dateien spielen eine wesentliche Rolle beim Aufbau einer benutzerfreundlichen Anwendung, die es den Benutzern ermöglicht, Kunstwerke zu entdecken und zu speichern.
+Dateibeschreibungen
+### App.js
+Die Hauptkomponente der Anwendung, die die grundlegende Struktur definiert und die anderen Komponenten zusammenführt.
+
+### app.json
+Enthält Konfigurationseinstellungen für die Anwendung, einschließlich Name, Version und Abhängigkeiten.
+
+### babel.config.js
+Konfigurationsdatei für Babel, die dafür sorgt, dass der JavaScript-Code in eine für Browser verständliche Form transpiliert wird.
+
+### FetchInstagram.js
+Eine Utility-Datei, die Funktionen zum Abrufen von Daten von Instagram bereitstellt, um Kunstwerke anzuzeigen.
+
+### firebase.js
+Konfiguriert Firebase für die Verwendung in der Anwendung, einschließlich Authentifizierung und Datenbankverbindung.
+
+### index.js
+Der Einstiegspunkt der Anwendung, der die Haupt-App-Komponente in das DOM rendert.
+
+### input.css
+Beinhaltet die globalen CSS-Stile für die Anwendung.
+
+### LICENSE
+Die Lizenzdatei, die die rechtlichen Bestimmungen für die Nutzung und Verteilung der Anwendung beschreibt.
+
+### metro.config.js
+Konfigurationsdatei für den Metro-Bundler, der für die Verarbeitung von React-Native-Projekten verwendet wird.
+
+### package.json
+Verwaltet die Projektabhängigkeiten und enthält Skripte für verschiedene Entwicklungsbefehle.
+
+### tailwind.config.js
+Konfiguriert Tailwind CSS, um benutzerdefinierte Stile in der Anwendung zu ermöglichen.
+
+### tailwind.json
+Speichert Tailwind CSS-Konfigurationen und -Stile für die Anwendung.
+
+### yarn.lock
+Eine automatische von Yarn generierte Datei, die genaue Versionen der Abhängigkeiten speichert.
+
+### hooks/useAuth.js
+Ein benutzerdefinierter Hook, der die Authentifizierungslogik für die Anwendung behandelt.
+
+### navigation/StackNavigator.js
+Definiert den Stack-Navigator für die Anwendung, der es Benutzern ermöglicht, zwischen verschiedenen Bildschirmen zu navigieren.
+
+### proxy/server.js
+Beinhaltet die Logik für den Server, der API-Anfragen behandelt und die Kommunikation zwischen dem Frontend und dem Backend ermöglicht.
+
+### screens/HomeScreen.js
+Der Startbildschirm der Anwendung, der eine Übersicht über alle verfügbaren Kunstwerke bietet.
+
+### screens/LikedArtScreen.js
+Ein Bildschirm, der die Kunstwerke anzeigt, die vom Benutzer gemocht wurden.
+
+### screens/LoginScreen.js
+Bietet die Anmeldelogik für Benutzer, um sich in der Anwendung zu authentifizieren.
+
+### screens/ModalScreen.js
+Ein Modalscreen für verschiedene Benutzerinteraktionen, wie z.B. das Anzeigen von Details zu einem Kunstwerk.
+
+## Challenges
+todo
 
 ---
 
-Wenn Sie weitere Informationen oder spezifische Anpassungen benötigen, lassen Sie es mich wissen!
